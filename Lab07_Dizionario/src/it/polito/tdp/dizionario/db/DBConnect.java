@@ -9,7 +9,7 @@ public class DBConnect {
 
 	static private final String jdbcUrl = "jdbc:mysql://localhost/dizionario?user=root";
 	static private DBConnect instance = null;
-
+	static private Connection conn = null ;
 	private DBConnect() {
 		instance = this;
 	}
@@ -24,10 +24,11 @@ public class DBConnect {
 
 	public Connection getConnection() {
 		try {
-
-			Connection conn = DriverManager.getConnection(jdbcUrl);
+			if(conn == null || conn.isClosed()){
+				conn = DriverManager.getConnection(jdbcUrl);
+			}
 			return conn;
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Cannot get connection " + jdbcUrl, e);

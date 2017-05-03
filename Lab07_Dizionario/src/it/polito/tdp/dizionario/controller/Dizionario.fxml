@@ -9,7 +9,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.dizionario.controller.DizionarioController">
    <top>
-      <Pane prefHeight="393.0" prefWidth="498.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="393.0" prefWidth="513.0" BorderPane.alignment="CENTER">
          <children>
             <TextArea fx:id="txtResult" editable="false" layoutX="27.0" layoutY="176.0" prefHeight="168.0" prefWidth="448.0" />
             <Text layoutX="34.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserire il numero di lettere:" />
@@ -17,9 +17,10 @@
             <Text layoutX="213.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lab7_Dizionario" />
             <TextField fx:id="inputNumeroLettere" layoutX="260.0" layoutY="48.0" prefHeight="27.0" prefWidth="132.0" />
             <TextField fx:id="inputParola" layoutX="260.0" layoutY="90.0" prefHeight="27.0" prefWidth="132.0" />
-            <Button fx:id="btnGeneraGrafo" layoutX="35.0" layoutY="137.0" mnemonicParsing="false" onAction="#doGeneraGrafo" prefHeight="27.0" prefWidth="106.0" text="Genera Grafo" />
-            <Button fx:id="btnTrovaVicini" layoutX="188.0" layoutY="137.0" mnemonicParsing="false" onAction="#doTrovaVicini" prefHeight="27.0" prefWidth="106.0" text="Trova vicini" />
-            <Button fx:id="btnTrovaGradoMax" layoutX="327.0" layoutY="137.0" mnemonicParsing="false" onAction="#doTrovaGradoMax" prefHeight="27.0" prefWidth="142.0" text="Trova grado max" />
+            <Button fx:id="btnGeneraGrafo" layoutX="21.0" layoutY="137.0" mnemonicParsing="false" onAction="#doGeneraGrafo" prefHeight="27.0" prefWidth="106.0" text="Genera Grafo" />
+            <Button fx:id="btnTrovaVicini" layoutX="143.0" layoutY="137.0" mnemonicParsing="false" onAction="#doTrovaVicini" prefHeight="27.0" prefWidth="106.0" text="Trova vicini" />
+            <Button fx:id="btnTrovaGradoMax" layoutX="263.0" layoutY="137.0" mnemonicParsing="false" onAction="#doTrovaGradoMax" prefHeight="27.0" prefWidth="127.0" text="Trova grado max" />
+            <Button fx:id="btnTrovaTuttiVicini" layoutX="401.0" layoutY="138.0" mnemonicParsing="false" onAction="#doTrovaTuttiVicini" text="Trova tutti i vicini" />
             <Button layoutX="410.0" layoutY="352.0" mnemonicParsing="false" onAction="#doReset" text="Reset" />
          </children>
       </Pane>

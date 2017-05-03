@@ -13,9 +13,45 @@ public class WordDAO {
 	 * Ritorna tutte le parole di una data lunghezza che differiscono per un solo carattere
 	 */
 	public List<String> getAllSimilarWords(String parola, int numeroLettere) {
+
+		Connection conn = DBConnect.getInstance().getConnection();
+		String sql = "SELECT nome FROM parola WHERE nome LIKE ? and LENGTH(nome) = ?;";
+		PreparedStatement st;
+
+		try {
+
+			st = conn.prepareStatement(sql);
 		
-		System.out.println("WordDAO -- TODO");
-		return new ArrayList<String>();
+			int i = 0 ;
+			List<String> parole = new ArrayList<String>();
+			
+			while(i!=parola.length()){
+			String daCercare = null;	
+			char[] array = parola.toCharArray() ;
+			array[i] = '_' ;
+			
+			daCercare = String.copyValueOf(array);
+			
+			st.setString(1, daCercare);
+			st.setInt(2, numeroLettere);
+			ResultSet res = st.executeQuery();
+
+			while (res.next()){
+				if(!parole.contains(res.getString("nome"))){
+					//if(parola.compareTo(res.getString("nome"))!=0)
+					parole.add(res.getString("nome"));
+				}
+				}
+			i++;
+				
+			}
+			return parole;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Errore connessione al database");
+			throw new RuntimeException("Error Connection Database");
+		}
 	}
 
 	/*
