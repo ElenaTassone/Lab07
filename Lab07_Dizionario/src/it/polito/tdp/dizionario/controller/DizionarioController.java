@@ -94,6 +94,7 @@ public class DizionarioController {
 //			List<String> parole = model.displayAllNeighbours3(parola);
 			for(String s : parole)
 				txtResult.appendText(s+"\n");
+			txtResult.appendText(parole.size()+"\n");
 		} catch (RuntimeException re) {
 			txtResult.setText(re.getMessage());
 		}
