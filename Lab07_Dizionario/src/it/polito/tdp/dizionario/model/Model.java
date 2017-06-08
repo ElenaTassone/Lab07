@@ -91,7 +91,7 @@ public class Model {
 			}		
 		return parole;
 	}
-
+// es  2 committ
 	public List<String> displayAllNeighbours2(String parolaInserita) {
 		this.recursive(parolaInserita);
 		return risultato ;
